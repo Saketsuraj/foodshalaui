@@ -7,8 +7,15 @@ $(document).ready(function(){
         let currLoc = window.location.href;
         currLoc = currLoc.split('/');
         let pageName = currLoc[currLoc.length - 1];
+        if(pageName == "login.html" || pageName == "registration.html"){
+            location.href="view-all-items.html";
+        }
         if(pageName == "view-all-items.html"){
             getItems();
+        }
+
+        if(pageName == "view-orders.html"){
+            fetchOrders()
         }
     }
     else{
@@ -154,7 +161,6 @@ $(document).ready(function(){
                             data += '<div><span class="item-green">';
                         }
                         data += as.data[i].type+'</span> | <span>Rs. '+as.data[i].price+'</span></div>';
-                        data += '<div><button class="btn btn-danger">Remove</button></div>';
                         data += '</div></div>';
                     }
                     $('#itemsList').html(data);
@@ -164,6 +170,38 @@ $(document).ready(function(){
                 }
             }
         });
+    }
+
+    function fetchOrders(){
+        let fd = new FormData();
+        fd.append('resid', resData['id']);
+        $.ajax({
+            url:apiURL+'restaurant/allorders',
+            type: 'POST',
+            data: fd,
+            dataType:'json',
+            processData: false,
+            contentType: false,
+            success:function(as){
+                if(as.status){
+                    var data = "";
+                    for(var i = 0; i < as.data.length; i++){
+                        data += '<div class="col-md-3 item"><div><div class="text-center">';
+                        data += '<span class="item-name">Order No. '+as.data[i].id+'</span></div>';
+                        data += '<div>Customer Name - <span class="item-name">'+as.data[i].name+'</span>';
+                        data += '</div><div>Customer Mobile - <span class="item-name">'+as.data[i].phone+'</span>';
+                        data += '</div><div>Items Ordered - <ul>';
+                        for(var j = 0; j < as.data[i].items.length; j++){
+                            data += '<li>'+as.data[i].items[j][0].name+'</li>';
+                        }
+                        data += '</ul></div></div></div>';
+                    }
+
+                    $('#orderList').html(data);
+                }
+            }
+        });                 
+                    
     }
 
   

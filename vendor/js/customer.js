@@ -14,7 +14,7 @@ $(document).ready(function(){
         else if(pageName == "login.html" || pageName == "registration.html"){
             $('.opt-header').remove();
             $('#customerDpdwn').show();
-            location.href="view-orders.html";
+            location.href="../../index.html";
         }
     }
     else{
