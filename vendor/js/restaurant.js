@@ -4,6 +4,15 @@ $(document).ready(function(){
     if(sessionStorage.getItem('restaurant')){
         var resData = JSON.parse(sessionStorage.getItem('restaurant'));
         $('#restaurantDropdown').html(resData['name']);
+        getItems();
+    }
+    else{
+        let currLoc = window.location.href;
+        currLoc = currLoc.split('/');
+        let pageName = currLoc[currLoc.length - 1];
+        if(pageName !== "login.html" && pageName !== "registration.html"){
+            location.href="login.html";
+        }
     }
 
     $('#logout').click(function(){
@@ -152,5 +161,5 @@ $(document).ready(function(){
         });
     }
 
-    getItems();
+  
 })
