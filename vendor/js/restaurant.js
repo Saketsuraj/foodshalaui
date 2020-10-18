@@ -117,4 +117,40 @@ $(document).ready(function(){
             });
         }
     });
+
+    function getItems(){
+        let fd = new FormData();
+        fd.append('resid', resData['id']);
+        $.ajax({
+            url:apiURL+'restaurant/getitems',
+            type: 'POST',
+            data: fd,
+            dataType:'json',
+            processData: false,
+            contentType: false,
+            success:function(as){
+                if(as.status == true){
+                    var data = "";
+                    for(var i = 0; i < as.data.length; i++){
+                        data += '<div class="col-md-3 item"><div><div><span class="item-name">'+as.data[i].name+'</span></div>';
+                        if(as.data[i].type=="non-veg"){
+                            data += '<div><span class="item-red">';
+                        }
+                        else{
+                            data += '<div><span class="item-green">';
+                        }
+                        data += as.data[i].type+'</span> | <span>Rs. '+as.data[i].price+'</span></div>';
+                        data += '<div><button class="btn btn-danger">Remove</button></div>';
+                        data += '</div></div>';
+                    }
+                    $('#itemsList').html(data);
+                }
+                else if(as.status == false){
+                    alert(as.message);
+                }
+            }
+        });
+    }
+
+    getItems();
 })
