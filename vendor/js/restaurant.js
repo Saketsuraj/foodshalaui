@@ -4,7 +4,12 @@ $(document).ready(function(){
     if(sessionStorage.getItem('restaurant')){
         var resData = JSON.parse(sessionStorage.getItem('restaurant'));
         $('#restaurantDropdown').html(resData['name']);
-        getItems();
+        let currLoc = window.location.href;
+        currLoc = currLoc.split('/');
+        let pageName = currLoc[currLoc.length - 1];
+        if(pageName == "view-all-items.html"){
+            getItems();
+        }
     }
     else{
         let currLoc = window.location.href;
