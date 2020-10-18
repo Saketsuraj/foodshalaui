@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Foodshala | Customer Registration</title>
+    <link rel="stylesheet" href="./../../vendor/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./../../vendor/css/style.css" />
+
+    <script src="./../../vendor/js/jquery.js"></script>
+    <script src="./../../vendor/js/popper.min.js"></script>
+    <script src="./../../vendor/js/bootstrap.min.js"></script>
+
+    <!-- Validation library-->
+    <script src="./../../vendor/js/jquery.validate.min.js"></script>
+    <script src="./../../vendor/js/additional-methods.min.js"></script>
+</head>
+
+<body>
+    <!--Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../../index.html">Foodshala</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                
+            </ul>
+            <div class="my-2 my-lg-0 dropdown">
+                <div class="btn-group opt-header">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Customers
+                    </a>
+                    <div class="dropdown-menu d-header" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="login.html">Login</a>
+                        <a class="dropdown-item" href="registration.html">Signup</a>
+                    </div>
+                </div>
+                
+                <div class="btn-group opt-header">
+                    <a class="nav-link dropdown-toggle" href="#" id="resDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Restaurants
+                    </a>
+                    <div class="dropdown-menu d-header" aria-labelledby="resDropdown">
+                        <a class="dropdown-item" href="../restaurant/login.html">Login</a>
+                        <a class="dropdown-item" href="../restaurant/registration.html">Signup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Registration Form-->
+    <div class="container">
+        <div class="col-md-12">
+            <div class="col-md-4 offset-4 form-box">
+                <h6>Customer Registration Form</h6>
+                <form id="customerReg">
+                    <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputName1" name="name" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="preference">Preferences</label>
+                        <select class="form-control" name="preference">
+                            <option>Select your preference</option>
+                            <option value="veg">Vegetarian</option>
+                            <option value="non-veg">Non-vegetarian</option>
+                            <option value="both">Both Non-veg & Veg</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPhone1">Phone</label>
+                        <input type="number" name="phone" class="form-control" id="exampleInputPhone1" placeholder="Phone no.">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div> 
+        </div>
+    </div>
+    <script src="./../../vendor/js/index.js"></script>
+    <script src="./../../vendor/js/customer.js"></script>
+</body>
+
+</html>

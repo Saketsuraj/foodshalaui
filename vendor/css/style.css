@@ -1,0 +1,47 @@
+.dropdown-menu.d-header{
+    margin-left: -55px;
+}
+.form-box{
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 60px;
+}
+.form-box > h6{
+    text-align: center;
+}
+.form-box > form label{
+    font-size: 12px;
+    font-weight: bold;
+}
+.list-box{
+    margin-top:30px;
+}
+.btn-order{
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+.item-green{
+    color: green;
+}
+.item-red{
+    color: red;
+}
+.item-name{
+    font-weight:bold;
+}
+.item{
+    padding: 10px;
+}
+.item > div{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+.add-new-row{
+    direction: rtl;
+}
+#loginCustomer{
+    display: none;
+}
